@@ -1,0 +1,9 @@
+{
+  "extension_human_name": "GOLD",
+  "extension_safari_id": "GOLD.extension",
+  "extension_gecko_id": "goldtime0820@gmail.com",
+  "encryption_key": "aiphe8Ceigohphif5YupePaifie5eet3joioioZoop4ahPeetah7eiraiz8teeQu",
+  "encryption_enabled": true,
+  "min_watch_seconds": "30",
+  "max_watch_seconds": "60 * 3"
+}

@@ -1,0 +1,10 @@
+{
+  "extension_human_name": "GOLD  [DEV]",
+  "extension_safari_id": "GOLD.extension.dev",
+  "extension_gecko_id": "gold",
+  "env": "development",
+  "app_url": "https://gold",
+  "encryption_enabled": false,
+  "min_watch_seconds": "2",
+  "max_watch_seconds": "10"
+}

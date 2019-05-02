@@ -1,0 +1,7 @@
+{
+  "extension_human_name": "GOLD [STG]",
+  "extension_safari_id": "gold.extension.stg",
+  "extension_gecko_id": "gold",
+  "env": "staging",
+  "app_url": "https://gold"
+}
