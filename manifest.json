@@ -1,38 +1,35 @@
 {
-  "name": "/* @echo extension_human_name */",
-  "author": "ScaleUp Media",
-  "version": "/* @echo version */",
-  "manifest_version": 2,
-  "description": "Gold extension boilerplate",
-  "icons": {
-    "40": "icons/icon40.png",
-    "128": "icons/icon128.png"
-  },
-  "background": {
-    "scripts": [ "scripts/background_bootstrap.js" ]
-  },
-  "permissions": [
-    "tabs",
-		"activeTab",
-    "http://*/*",
-    "https://*/*",
-    "https://www.google.com/",
-    "https://www.gmail.com/"
-  ],
-  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-  "content_scripts": [
-    {
-      "matches": [ 
-        "http://mail.google.com/*", 
-        "https://mail.google.com/*", 
-        "https://inbox.google.com/*" ],
-      "js": [
-        "scripts/contentscript.js"
-      ],
-      "run_at": "document_end",
-      "all_frames": true
-    }
-  ]
+    "name": "/* @echo extension_human_name */",
+    "author": "ScaleUp Media",
+    "version": "/* @echo version */",
+    "manifest_version": 2,
+    "description": "Gold extension boilerplate",
+    "icons": {
+        "40": "icons/icon40.png",
+        "128": "icons/icon128.png"
+    },
+    "background": {
+        "scripts": ["scripts/background_bootstrap.js"]
+    },
+    "permissions": [
+        "tabs",
+        "activeTab",
+        "http://*/*",
+        "https://*/*",
+        "https://www.google.com/",
+        "https://www.gmail.com/"
+    ],
+    "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+    "content_scripts": [{
+        "matches": [
+            "http://mail.google.com/*",
+            "https://mail.google.com/*",
+            "https://inbox.google.com/*"
+        ],
+        "js": [
+            "scripts/contentscript.js", "lib/inboxsdk.js"
+        ],
+        "run_at": "document_end",
+        "all_frames": true
+    }]
 }
-
-
