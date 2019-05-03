@@ -135,10 +135,10 @@ gulp.task('plist', () => {
 });
 
 gulp.task('copy_to_xcode', () => {
-    console.log(`Exec shell: rsync -avr --delete ./build/${argv.env}/safari/{fonts,icons,images,scripts,lib} ../gold-safari/goldtime\\ Extension/`)
+    console.log(`Exec shell: rsync -avr --delete ./build/${argv.env}/safari/{fonts,icons,images,scripts} ../gold-safari/goldtime\\ Extension/`)
     if (argv.browser == 'safari') {
         return gulp.src('./package.json')
-            .pipe(shell(`rsync -avr --delete ./build/${argv.env}/safari/{fonts,icons,images,scripts,lib} ../gold-safari/goldtime\\ Extension/`))
+            .pipe(shell(`rsync -avr --delete ./build/${argv.env}/safari/{fonts,icons,images,scripts} ../gold-safari/goldtime\\ Extension/`))
     }
 });
 
@@ -165,7 +165,6 @@ function mergeAll(environment, browser) {
         pipe([`./src/images/**/*`], `./build/${destDir(environment, browser)}/images`),
         pipe([`./src/fonts/**/*`], `./build/${destDir(environment, browser)}/fonts`),
         pipe([`./src/icons/${argv.browser}/**/*`], `./build/${destDir(environment, browser)}/icons`),
-        pipe([`./src/scripts/lib/${argv.browser}/**/*`], `./build/${destDir(environment, browser)}/scripts/lib`),
         pipe([`./platform/${argv.browser}/**/*`], `./build/${destDir(environment, browser)}`),
     )
 }
