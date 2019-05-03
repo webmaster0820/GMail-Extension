@@ -72,18 +72,18 @@ listen('contentscript.unload', function(payload) {
  * Content script reporting it's focused
  */
 listen('contentscript.focus', function(payload) {
-  getActiveTabUrl((url) => {
-    if (payload.href == url) {
-      setCurrentActiveHref(url);
-    }
-  });
+  // getActiveTabUrl((url) => {
+  //   if (payload.href == url) {
+  //     setCurrentActiveHref(url);
+  //   }
+  // });
 });
 
 /**
  * Content script reporting focus is lost
  */
 listen('contentscript.blur', function(payload) {
-  setTimeout(checkCurrentPage, 10);
+  // setTimeout(checkCurrentPage, 10);
 });
 
 function wipePreservedPopupForm() {
