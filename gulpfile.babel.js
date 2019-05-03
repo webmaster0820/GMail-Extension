@@ -92,7 +92,7 @@ gulp.task('ext', ['manifest', 'js', 'plist'], () => {
 
 gulp.task('js-clean-dev', () => {
     return gulp.src(`./build/${destDir(argv.env, argv.browser)}/utils`)
-        .pipe($.clean());
+        .pipe($.clean())
 });
 
 gulp.task('js', () => {
@@ -160,12 +160,12 @@ function pipe(src, ...transforms) {
 function mergeAll(environment, browser) {
     return merge(
         pipe('./src/icons/**/*', `./build/${destDir(environment, browser)}/icons`),
-        pipe('./src/lib/*', `./build/${destDir(environment, browser)}/lib`),
+        pipe('./src/scripts/lib/*', `./build/${destDir(environment, browser)}/scripts/lib`),
         pipe(['./src/_locales/**/*'], `./build/${destDir(environment, browser)}/_locales`),
         pipe([`./src/images/**/*`], `./build/${destDir(environment, browser)}/images`),
         pipe([`./src/fonts/**/*`], `./build/${destDir(environment, browser)}/fonts`),
         pipe([`./src/icons/${argv.browser}/**/*`], `./build/${destDir(environment, browser)}/icons`),
-        pipe([`./src/lib/${argv.browser}/**/*`], `./build/${destDir(environment, browser)}/lib`),
+        pipe([`./src/scripts/lib/${argv.browser}/**/*`], `./build/${destDir(environment, browser)}/scripts/lib`),
         pipe([`./platform/${argv.browser}/**/*`], `./build/${destDir(environment, browser)}`),
     )
 }
@@ -207,7 +207,15 @@ function buildJS(environment, browser) {
                         } else {
                             return `./src/scripts/${mod}.js`
                         }
+                    },
+                    'core/(\\w+)': function(mod) {
+                        if (fs.existsSync(`./platform/${browser}/${mod}.js`)) {
+                            return `./platform/${browser}/${mod}.js`;
+                        } else {
+                            return `./src/scripts/${mod}.js`
+                        }
                     }
+
                 },
                 verbose: false
             })

@@ -1,5 +1,3 @@
-import platform from 'utils/platform';
-
 const LIVERELOAD_HOST = 'localhost:';
 const LIVERELOAD_PORT = 35739;
 const connection = new WebSocket('ws://' + LIVERELOAD_HOST + LIVERELOAD_PORT + '/livereload');

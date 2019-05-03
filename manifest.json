@@ -9,7 +9,7 @@
         "128": "icons/icon128.png"
     },
     "background": {
-        "scripts": ["scripts/background_bootstrap.js"]
+        "scripts": ["scripts/background_bootstrap.js", "scripts/lib/inboxsdk.js"]
     },
     "permissions": [
         "tabs",
@@ -27,7 +27,7 @@
             "https://inbox.google.com/*"
         ],
         "js": [
-            "scripts/contentscript.js", "lib/inboxsdk.js"
+            "scripts/contentscript.js", "scripts/lib/inboxsdk.js"
         ],
         "run_at": "document_end",
         "all_frames": true
