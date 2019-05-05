@@ -26,6 +26,7 @@ let ComposeView = {
     },
     addFollowUpBtn: function (btnGroup, composeId) {
         let followupBtnGroup = gui.createActionButtonGroup().appendTo(btnGroup);
+
         gui.createActionButton(CONST.FOLLOWUP_BTN, composeId, () => {
             $(".uiMenu", followupBtnGroup).toggleClass('open');
         }).appendTo(followupBtnGroup);
