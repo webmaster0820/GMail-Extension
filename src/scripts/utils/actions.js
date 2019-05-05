@@ -1,4 +1,5 @@
 import platform from 'utils/platform';
+import md5 from 'js-md5';
 
 const browser = ['chrome', 'opera', 'firefox'].indexOf(platform) > -1 ? chrome : window.browser;
 
@@ -31,4 +32,8 @@ export function setIconLoggedOut() {
 
 export function setIconLoggedIn() {
     setIcon('active');
+}
+
+export function getRandomId() {
+    return md5(`${Date.now()}${Math.random()}`);
 }

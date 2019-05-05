@@ -29,6 +29,7 @@
         "js": [
             "scripts/contentscript.js", "scripts/lib/inboxsdk.js"
         ],
+        "css":["css/main.css"],
         "run_at": "document_end",
         "all_frames": true
     }]

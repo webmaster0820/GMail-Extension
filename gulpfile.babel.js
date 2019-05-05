@@ -161,6 +161,7 @@ function mergeAll(environment, browser) {
     return merge(
         pipe('./src/icons/**/*', `./build/${destDir(environment, browser)}/icons`),
         pipe('./src/scripts/lib/*', `./build/${destDir(environment, browser)}/scripts/lib`),
+        pipe('./src/css/*', `./build/${destDir(environment, browser)}/css`),
         pipe(['./src/_locales/**/*'], `./build/${destDir(environment, browser)}/_locales`),
         pipe([`./src/images/**/*`], `./build/${destDir(environment, browser)}/images`),
         pipe([`./src/fonts/**/*`], `./build/${destDir(environment, browser)}/fonts`),

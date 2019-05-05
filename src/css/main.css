@@ -1,0 +1,15 @@
+.inboxsdk__compose_statusbar{
+   overflow:  initial !important;
+}
+.menuitem:hover{
+   background: #d0d0d0;
+}
+.uiMenu.open{
+   display: block;
+}
+.uiMenu{
+   display: none;
+}
+.followupBtn:active{
+   background: red;
+}
